@@ -313,7 +313,33 @@
 
   </section>
 <style>
-  <!-- LOGIN / SIGNUP POPUP -->
+  <!-- LOGIN / SIGNUP POPUP --><input type="text" placeholder="Username">
+<input type="password" placeholder="Password">
+
+<button id="mainBtn">Login</button><div id="loginForm">
+  <input type="text" placeholder="Username">
+  <input type="password" placeholder="Password">
+
+  <button onclick="login()">Login</button>
+
+  <p style="margin-top:10px;font-size:14px;">
+    New user?
+    <span style="color:blue;cursor:pointer;" onclick="showSignup()">Signup</span>
+  </p>
+</div>
+
+<div id="signupForm" style="display:none;">
+  <input type="text" placeholder="Username">
+  <input type="password" placeholder="Password">
+
+  <button onclick="signup()">Signup</button>
+
+  <p style="margin-top:10px;font-size:14px;">
+    Already have account?
+    <span style="color:blue;cursor:pointer;" onclick="showLogin()">Login</span>
+  </p>
+</div>
+
 <div class="modal" id="loginModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6);">
   <div style="background:white; width:300px; margin:100px auto; padding:20px; border-radius:8px; text-align:center;">
     
@@ -351,6 +377,46 @@ function toggleForm() {
   document.getElementById("mainBtn").innerText = isLogin ? "Login" : "Create Account";
   document.getElementById("toggleText").innerText =
     isLogin ? "Don't have an account?" : "Already have an account?";
+}
+</script>
+  <script>
+function showSignup() {
+  document.getElementById("loginForm").style.display = "none";
+  document.getElementById("signupForm").style.display = "block";
+}
+
+function showLogin() {
+  document.getElementById("signupForm").style.display = "none";
+  document.getElementById("loginForm").style.display = "block";
+}
+
+function signup() {
+  alert("Signup successful (demo)");
+}
+
+function login() {
+  alert("Login successful (demo)");
+}
+</script>
+  <script>
+function showSignup() {
+  document.getElementById("loginForm").style.display = "none";
+  document.getElementById("signupForm").style.display = "block";
+  document.getElementById("formTitle").innerText = "Signup";
+}
+
+function showLogin() {
+  document.getElementById("signupForm").style.display = "none";
+  document.getElementById("loginForm").style.display = "block";
+  document.getElementById("formTitle").innerText = "Login";
+}
+
+function signup() {
+  alert("Signup successful (demo)");
+}
+
+function login() {
+  alert("Login successful (demo)");
 }
 </script>
 body {
